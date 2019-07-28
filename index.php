@@ -17,14 +17,15 @@ include 'conexion/conexion.php';
 </head>
 
 <body>
-  <div class="contenedor">
-    <h3>Ejemplo inicio de sesión</h3>
+  <div class="row center-xs">
+    <h3 class="col-xs-10">Ejemplo inicio de sesión</h3>
     <!-- ..::LOGIN::.. -->
-    <h2>
+    <h2 class="col-xs-10">
       Iniciar sesión
     </h2>
+    <div class="col-xs-3"></div>
     <!-- Formulario -->
-    <form action="inicio/index.php">
+    <form action="inicio/index.php" class="col-xs-6 start-xs">
       <label for="user">Usuario:</label> <br>
       <input type="text" id="user" name="user" autofocus>
       <span class="user_error">Usuario invalido</span>
@@ -40,6 +41,8 @@ include 'conexion/conexion.php';
       </div>
       <br>
     </form>
+    <!-- END Formulario -->
+    <div class="col-xs-3"></div>
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery.validate.min.js"></script>
