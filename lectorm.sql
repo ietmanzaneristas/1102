@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2019 a las 14:35:31
+-- Tiempo de generación: 28-07-2019 a las 02:55:51
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -74,8 +74,7 @@ INSERT INTO `users` (`id_usu`, `nombre_usu`, `apellido_usu`, `celular_usu`, `fec
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_usu`),
-  ADD UNIQUE KEY `email_usu` (`email_usu`),
-  ADD UNIQUE KEY `email_usu_2` (`email_usu`);
+  ADD UNIQUE KEY `email_usu` (`email_usu`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
