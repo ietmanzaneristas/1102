@@ -1,8 +1,5 @@
 $(function () {
 
-  // mostrar div con el error 
-  // $('#nombre_usu ~ span').css('visibility', 'visible');
-
   $('#email_usu').focusout(function () {
     // console.log('Esta cambiando');
     $.post('ajaxValidateEmail_usu.php', {
@@ -65,7 +62,5 @@ $(function () {
       }
     }
   });
-
-
 
 });
