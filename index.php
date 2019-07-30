@@ -1,5 +1,9 @@
 <?php
 include 'conexion/conexion.php';
+
+if ($_GET) {
+  echo $_GET['msj'];
+}
 ?>
 <!doctype html>
 <html lang="es">
@@ -10,7 +14,7 @@ include 'conexion/conexion.php';
   <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link href="img/favicon.ico" rel="icon" type="image/x-icon">
-  <title>IETFMH Login</title>
+  <title>LectorM Login</title>
   <!-- Page styles -->
   <link rel="stylesheet" href="css/flexboxgrid.css">
   <link rel="stylesheet" href="css/estilos.css">
@@ -24,23 +28,30 @@ include 'conexion/conexion.php';
       Iniciar sesión
     </h2>
     <div class="col-xs-3"></div>
-    <!-- Formulario -->
-    <form action="inicio/index.php" class="col-xs-6 start-xs">
-      <label for="user">Usuario:</label> <br>
-      <input type="text" id="user" name="user" autofocus>
-      <span class="user_error">Usuario invalido</span>
-      <br><br>
-      <label for="pass">Contraseña:</label> <br>
-      <input type="password" id="pass" name="pass">
-      <span class="pass_error">Contraseña invalida</span>
-      <br> <br>
-      <div id="next">
-        <button>
+    <!-- Formulario  action="inicio/index.php"-->
+    <div class="col-xs-6 start-xs">
+      <form id="login-usu">
+
+        <label for="email_usu">Usuario:</label> <br>
+        <input type="email" id="email_usu" name="email_usu" placeholder="e-mail" autofocus>
+        <span class="user_error">Usuario invalido</span>
+        <br><br>
+
+        <label for="pass">Contraseña:</label> <br>
+        <input type="password" id="pass_usu" name="pass_usu">
+        <span class="pass_error">Contraseña invalida</span>
+        <br> <br>
+        <div class="myButton" id="entrarBtn">
           Entrar
-        </button>
-      </div>
-      <br>
-    </form>
+        </div>
+        <br><br>
+        <div>
+          <a href="usuarios" class="nuevoUsuario">
+            Registrar nuevo usuario
+          </a>
+        </div>
+      </form>
+    </div>
     <!-- END Formulario -->
     <div class="col-xs-3"></div>
   </div>

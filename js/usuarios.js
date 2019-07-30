@@ -11,7 +11,6 @@ $(function () {
           $('#email_usuValida').html('Validando el e-mail <div class="mdl-spinner mdl-js-spinner is-active"></div>');
         }
       },
-
       function (respuesta) {
         $('#email_usuValida').html(respuesta);
         if (respuesta.length > 0) {

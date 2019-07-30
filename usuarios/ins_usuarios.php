@@ -8,10 +8,8 @@ if (!$con) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
-echo '<pre>';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
   $nombre_usu = $con->real_escape_string(htmlentities($_POST['nombre_usu']));
   $apellido_usu = $con->real_escape_string(htmlentities($_POST['apellido_usu']));
   $fechaNac_usu = $con->real_escape_string(htmlentities($_POST['fechaNac_usu']));
@@ -21,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $pass_usu = sha1($pass_usu);
   $sede_usu = $con->real_escape_string(htmlentities($_POST['sede_usu']));
   $curso_usu = $con->real_escape_string(htmlentities($_POST['curso_usu']));
-  // $foto_usu = $con->real_escape_string(htmlentities($_POST['foto_usu']));
+  // Procesamos la $foto_usu 
   $extension = '';
   $ruta = 'fotoPerfil';
   $archivo = $_FILES['foto_usu']['tmp_name'];
@@ -47,13 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($ins) {
     // echo "New record created successfully";
-    header('location:../extend/alertas.php?msj=El usuario ha sido registrado.&c=inicio&p=in&t=success');
+    header('location:../index.php?msj=El usuario ha sido registrado.<br>');
   } else {
-    echo "Error: " . $ins . "<br>" . mysqli_error($con);
-    header('location:../extend/alertas.php?msj=El usuario no pudo ser registrado.&c=us&p=in&t=error');
+    // echo "Error: " . $ins . "<br>" . mysqli_error($con);
+    header('location:../usuarios/index.php?msj=El usuario no pudo ser registrado.<br>');
   }
 
   $con->close();
 } else {
-  header('location:../extend/alertas.php?msj=Utiliza el formulario.&c=us&p=in&t=error');
+  header('location:../usuarios/index.php?msj=Utiliza el formulario.<br>');
 }
