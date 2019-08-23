@@ -39,7 +39,6 @@ $(function () {
       }).fail(function (jqXHR) {
         $('.pass_error').html('Error!! ' + jqXHR.status);
       });
-
     } else {
       return false;
     }
